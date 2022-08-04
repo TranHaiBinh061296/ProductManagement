@@ -1,0 +1,179 @@
+*{
+    padding: 0px;
+    margin:0px ;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-collapse: collapse;
+
+}
+body{
+    width: 1350px;
+    margin: auto;
+}
+.row{
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+}
+.left-side{
+    width: 30%;
+    background-color: #dadfe5;
+}
+.right-side{
+    width: 70%;
+    background-color:#dadfe5;
+    float: right;
+}
+.tbpharmacy{
+    float: right;
+    width: 90%;
+}
+
+.form-group {
+    display: flex;
+    padding:2px ;
+}
+.form-group>label {
+    flex: 1;
+}
+.addsave{
+    text-align: center;
+}
+.form-control {
+    border: none;
+    outline: none;
+    padding: 5px 0px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    flex: 3;
+}
+.btn {
+    border: none;
+    outline: none;
+    border: 1px solid #EFEFEF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px;
+}
+.btn-primary {
+    color: white ;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    color:#EFEFEF;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-warning {
+    color: #212529;
+    background-color:#ffc107;
+    border-color: #ffc107;
+}
+.btn-warning:hover {
+    color: #212529;
+    background-color:#e0a800;
+    border-color: #d39e00;
+}
+.btn-memo {
+    color: white;
+    background-color: rgb(11, 155, 11);
+    border-color:  rgb(11, 155, 11);
+}
+.btn-memo:hover {
+    color: white;
+    background-color: rgb(9, 88, 9);
+    border-color: rgb(6, 147, 6);
+}
+.btn-danger {
+    color: white;
+    background-color : #D61C4E ;
+    border-color: rgb(217, 36, 36) ;
+}
+.btn-danger:hover {
+    color: white;
+    background-color:rgb(238, 18, 18) ;
+    border-color: #D61C4E;
+}
+.tbpharmacy tr, th, td {
+    border: 1px solid #333;
+}
+.tbpharmacy td:hover {
+    background-color: rgb(234, 210, 210);
+    cursor: pointer;
+}
+.tbpharmacy>thead {
+    height: 60px;
+    background-color: #333;
+    color: white;
+}
+th , td {
+    text-align: center;
+}
+td {
+    height: 80px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #7fa5ed;
+}
+
+li {
+    float: left;
+    background-color: #7fa5ed;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+li button {
+    text-align: right;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+}
+.search{
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px ;
+    background-color: white;
+}
+.search:hover{
+    color:black ;
+    background-color: #ffffffba;
+    cursor: pointer;
+}
+.btn-login {
+    float: right;
+    padding-top: 7px;
+    width: 20%;
+}
+li input{
+    border: none;
+    outline: none;
+    width: 400px;
+    height: 35px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding-left: 30px;
+    font-size: 15px;
+
+}
+
+li a:hover {
+    background-color: #6070e7;
+    cursor: pointer;
+}
+.done {
+    display: none;
+}
