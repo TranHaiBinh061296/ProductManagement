@@ -29,22 +29,32 @@ body {
     float: right;
 }
 
+
 .tbpharmacy {
     float: right;
     width: 90%;
 }
 
+
 .form-group {
     display: flex;
     padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 17px;
 }
+.create-product {
+    width: 450px;
+    
+}
+.form-group input{
+    float: right;
+    width: 70%;
+}
+
 
 .form-group>label {
     flex: 1;
-}
-
-.addsave {
-    text-align: center;
 }
 
 .form-control {
@@ -53,8 +63,12 @@ body {
     padding: 5px 0px;
     border: 1px solid #333;
     border-radius: 5px;
-    flex: 3;
+    /* flex: 3; */
 }
+.addsave {
+    text-align: center;
+}
+
 
 .btn {
     border: none;
@@ -120,7 +134,7 @@ td {
     border: 1px solid #333;
 }
 
-.tbpharmacy td:hover {
+.tbpharmacy tr:hover {
     background-color: rgb(234, 210, 210);
     cursor: pointer;
 }
@@ -207,7 +221,17 @@ li a:hover {
     background-color: #6070e7;
     cursor: pointer;
 }
-
+.imglogo{
+  width: 50px;
+  height: 50px;
+  float: right;
+  box-sizing: border-box;
+  margin: 4px 4px 4px 4px;
+}
+.imglogo img{
+    width: 47px;
+    height: 47px;
+}
 .done {
     display: none;
 }

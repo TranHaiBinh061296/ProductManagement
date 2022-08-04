@@ -18,7 +18,9 @@ function init() {
             new Product(1, "Panadol", "https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/panadol/vi_vn/vietnamproduct/panadol_extra/product_global_styles/desktop-408x300.png?auto=format", 102000, "Dược phẩm Khánh Hòa"),
             new Product(2, "Gingko", "https://nhathuocthucanh.com/wp-content/uploads/2021/07/00017403-ginkgo-biloba-240mg-10x10-usa-xanh-hinh-cai-la-2816-5b4c_large-1-600x600.jpg", 50000, "Nhập khẩu Úc"),
             new Product(3, "Euginca", "https://cf.shopee.vn/file/726f299e61d65bed106e1df3c84b1879", 45000, "Germany Pharma"),
-            new Product(4, "noxa", "https://cf.shopee.vn/file/03de778f2c1497df391913e119a8916b", 210000, "Thailand"),
+            new Product(4, "Noxa", "https://cf.shopee.vn/file/03de778f2c1497df391913e119a8916b", 210000, "Thailand"),
+            new Product(5, "Cefuroxim", "https://alphabetpharma.com.vn/image/cache/catalog/nha-thuoc/thuoc-ke-don/thuoc-khang-sinh-khang-virus/cefuroxim-500mg-vidipha-800x800.jpeg", 320000, "Dược phẩm Khánh Hòa"),
+            new Product(6, "Magie b6", "https://thuoc5sao.com/wp-content/uploads/2021/08/Magne-B6-Corbiere-FCT-2.jpg", 31000, "Dược phẩm Khánh Hòa"),
         ];
         localStorage.setItem(key_data, JSON.stringify(products));
     }
@@ -172,9 +174,9 @@ function savePharmacy() {
         }
     }
     document.querySelector("#cancel").classList.add('done');
-    localStorage.setItem(key_data, JSON.stringify(products));
     document.querySelector("#save").classList.add('done');
     document.querySelector("#cancel").classList.add('done');
+    localStorage.setItem(key_data, JSON.stringify(products));
     clearForm();
     renderProduct(products);
 }
@@ -191,4 +193,3 @@ function main() {
     renderProduct(products);
 }
 main();
-//drgdsdfsdafdsgfdsfesf
