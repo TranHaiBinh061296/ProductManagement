@@ -1,44 +1,52 @@
-*{
+* {
     padding: 0px;
-    margin:0px ;
+    margin: 0px;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     border-collapse: collapse;
 
 }
-body{
+
+body {
     width: 1350px;
     margin: auto;
 }
-.row{
+
+.row {
     width: 100%;
     margin: 0px auto;
     display: flex;
 }
-.left-side{
+
+.left-side {
     width: 30%;
-    background-color: #dadfe5;
+    /* background-color: #dadfe5; */
 }
-.right-side{
+
+.right-side {
     width: 70%;
-    background-color:#dadfe5;
+    /* background-color:#dadfe5; */
     float: right;
 }
-.tbpharmacy{
+
+.tbpharmacy {
     float: right;
     width: 90%;
 }
 
 .form-group {
     display: flex;
-    padding:2px ;
+    padding: 2px;
 }
+
 .form-group>label {
     flex: 1;
 }
-.addsave{
+
+.addsave {
     text-align: center;
 }
+
 .form-control {
     border: none;
     outline: none;
@@ -47,6 +55,7 @@ body{
     border-radius: 5px;
     flex: 3;
 }
+
 .btn {
     border: none;
     outline: none;
@@ -56,64 +65,81 @@ body{
     cursor: pointer;
     margin: 3px;
 }
+
 .btn-primary {
-    color: white ;
+    color: white;
     background-color: #007bff;
     border-color: #007bff;
 }
+
 .btn-primary:hover {
-    color:#EFEFEF;
+    color: #EFEFEF;
     background-color: #0069d9;
     border-color: #0062cc;
 }
+
 .btn-warning {
     color: #212529;
-    background-color:#ffc107;
+    background-color: #ffc107;
     border-color: #ffc107;
 }
+
 .btn-warning:hover {
     color: #212529;
-    background-color:#e0a800;
+    background-color: #e0a800;
     border-color: #d39e00;
 }
+
 .btn-memo {
     color: white;
     background-color: rgb(11, 155, 11);
-    border-color:  rgb(11, 155, 11);
+    border-color: rgb(11, 155, 11);
 }
+
 .btn-memo:hover {
     color: white;
     background-color: rgb(9, 88, 9);
     border-color: rgb(6, 147, 6);
 }
+
 .btn-danger {
     color: white;
-    background-color : #D61C4E ;
-    border-color: rgb(217, 36, 36) ;
+    background-color: #D61C4E;
+    border-color: rgb(217, 36, 36);
 }
+
 .btn-danger:hover {
     color: white;
-    background-color:rgb(238, 18, 18) ;
+    background-color: rgb(238, 18, 18);
     border-color: #D61C4E;
 }
-.tbpharmacy tr, th, td {
+
+.tbpharmacy tr,
+th,
+td {
     border: 1px solid #333;
 }
+
 .tbpharmacy td:hover {
     background-color: rgb(234, 210, 210);
     cursor: pointer;
 }
+
 .tbpharmacy>thead {
     height: 60px;
     background-color: #333;
     color: white;
 }
-th , td {
+
+th,
+td {
     text-align: center;
 }
+
 td {
     height: 80px;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -126,6 +152,8 @@ ul {
 li {
     float: left;
     background-color: #7fa5ed;
+    position: relative;
+    font-size: 17px;
 }
 
 li a {
@@ -135,29 +163,34 @@ li a {
     padding: 16px;
     text-decoration: none;
 }
+
 li button {
     text-align: right;
     padding: 10px;
     margin: 3px;
     border-radius: 10px;
 }
-.search{
+
+.search {
     border: none;
     border-radius: 15px;
-    margin-top: 10px ;
+    margin-top: 10px;
     background-color: white;
 }
-.search:hover{
-    color:black ;
+
+.search:hover {
+    color: black;
     background-color: #ffffffba;
     cursor: pointer;
 }
+
 .btn-login {
     float: right;
     padding-top: 7px;
     width: 20%;
 }
-li input{
+
+li input {
     border: none;
     outline: none;
     width: 400px;
@@ -174,6 +207,7 @@ li a:hover {
     background-color: #6070e7;
     cursor: pointer;
 }
+
 .done {
     display: none;
 }

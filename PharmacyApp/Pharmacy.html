@@ -9,26 +9,28 @@
     <link rel="stylesheet" href="Pharmacy.css">
     <style>
         body {
-            background-image: url("");
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210115/pngtree-abstract-hexagon-gray-gradient-white-minimalist-medical-technology-background-image_524812.jpg");
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <ul>
-            <li><a href="">Trang chủ</a></li>
-            <li><a href="">Tiện ích</a></li>
-            <li><a href="">Tư vấn</a></li>
-            <li><a href="">Hỗ trợ</a></li>
-            <li><a href="">Sản phẩm</a></li>
-            <li><input type="text" placeholder="Tìm kiếm sản phẩm"></li>
-            <li><button class="search">Search</button></li>
-            <div class="btn-login">
-                <li><button class="btn-memo">Đăng nhập</button></li>
-                <li><button class="btn-danger">Đăng ký</button></li>
-            </div>
-        </ul>
+        <div class="menu">
+            <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">Tiện ích</a></li>
+                <li><a href="">Tư vấn</a></li>
+                <li><a href="">Hỗ trợ</a></li>
+                <li><a href="">Sản phẩm</a></li>
+                <li><input id="searchicon" oninput="search()" type="text" placeholder="Tìm kiếm sản phẩm">
+                <li><button class="search">Search</button></li>
+                <div class="btn-login">
+                    <li><button class="btn-memo">Đăng nhập</button></li>
+                    <li><button class="btn-danger">Đăng ký</button></li>
+                </div>
+            </ul>
+        </div>
         <div class="row">
             <div class="left-side">
                 <div class="create-product">
@@ -60,7 +62,7 @@
                     </div>
                     <div class="form-group addsave ">
                         <button onclick="addPharmacy()" class="btn btn-primary">Add</button>
-                        <button onclick="savePharmacy()" class="btn btn-memo">Save</button>
+                        <button id="save" onclick="savePharmacy()" class="btn done btn-memo">Save</button>
                         <button id="cancel" onclick="cancelPharmacy()" class="btn done btn-danger">Cancel</button>
                     </div>
                 </div>
@@ -86,7 +88,7 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="list-product">
                     </tbody>
                 </table>
             </div>

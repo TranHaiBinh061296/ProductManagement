@@ -11,6 +11,7 @@ let products = []
 const key_data = "product_data";
 const sort_asc = 'asc';
 const sort_desc = 'desc';
+// tạo vùng nhớ localStorage
 function init() {
     if (localStorage.getItem(key_data) == null) {
         products = [
@@ -18,44 +19,45 @@ function init() {
             new Product(2, "Gingko", "https://nhathuocthucanh.com/wp-content/uploads/2021/07/00017403-ginkgo-biloba-240mg-10x10-usa-xanh-hinh-cai-la-2816-5b4c_large-1-600x600.jpg", 50000, "Nhập khẩu Úc"),
             new Product(3, "Euginca", "https://cf.shopee.vn/file/726f299e61d65bed106e1df3c84b1879", 45000, "Germany Pharma"),
             new Product(4, "noxa", "https://cf.shopee.vn/file/03de778f2c1497df391913e119a8916b", 210000, "Thailand"),
-        ]
-        setData(key_data, products)
+        ];
+        localStorage.setItem(key_data, JSON.stringify(products));
     }
     else {
-        products = getData(key_data);
+        products = JSON.parse(localStorage.getItem(key_data));
     }
 }
-function getData(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
-function setData(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-}
-function renderProduct() {
-    let htmls = products.map(function (product, index) {
+function renderProduct(data) {
+    let htmls = data.map(function (product, index) {
         return `
                 <tr onclick="editPharmacy(${product.id})"  id="tr_${product.id}">
                     <td>${product.id}</td>
-                    <td>${product.name}</td>
+                    <td id="tdname_${product.id}">${product.name}</td>
                     <td >
                     <img style="width:60px; height:60px;" src="${product.image}" alt="">
                     </td>
                     <td>${formatCurrency(product.price)}</td>
                     <td>${product.manufactory}</td>
                     <td>
-                        <button onclick="editPharmacy(${product.id})" id="edit_${product.id}" class="btn btn-warning">Edit</button>
-                        <button onclick="removePharmacy(${product.id})" id="delete_${product.id}" class="btn btn-danger">Delete</button>
+                        <button  onclick="editPharmacy(${product.id})" id="edit_${product.id}" class="btn btn-warning">Edit</button>
+                        <button  onclick="removePharmacy(${product.id})" id="delete_${product.id}" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
         `
     });
     document.querySelector('.tbpharmacy>tbody').innerHTML = htmls.join("");
 }
+
+
 function formatCurrency(number) {
     return number.toLocaleString('vi', { style: 'currency', currency: 'VND' });
 }
 
 function addPharmacy() {
+    // b1: lấy value từ các field
+    // b2: tạo ra 1 đối tượng Product
+    // b3: thêm vào students
+    // b4: renderproduct()
+    // b5: clear form
     let productName = document.querySelector("#productName").value;
     if (productName == null || productName == "") {
         alert("Product Name is required");
@@ -67,10 +69,12 @@ function addPharmacy() {
     let id = getLastestId() + 1;
     let newProduct = new Product(id, productName, image, price, manufactory);
     products.push(newProduct)
-    setData(key_data, products);
-    renderProduct();
+    localStorage.setItem(key_data, JSON.stringify(products));
+    renderProduct(products);
     clearForm();
 }
+
+//tìm ID lớn nhất
 function getLastestId() {
     let productTemp = [...products];
     let maxId = productTemp.sort(function (pdt1, pdt2) {
@@ -78,12 +82,14 @@ function getLastestId() {
     })[0].id
     return maxId;
 }
+//reset lại form
 function clearForm() {
     document.querySelector("#productName").value = "";
     document.querySelector("#image").value = "";
     document.querySelector("#price").value = "";
     document.querySelector("#manufactory").value = "";
 }
+// delete product
 function removePharmacy(id) {
     let confirmed = window.confirm("Are you sure to remove this product?");
     if (confirmed) {
@@ -91,8 +97,8 @@ function removePharmacy(id) {
             return pdt.id == id;
         })
         products.splice(position, 1);
-        setData(key_data, products);
-        renderProduct();
+        localStorage.setItem(key_data, JSON.stringify(products));
+        renderProduct(products);
     }
 }
 function sort(direct) {
@@ -106,7 +112,7 @@ function sort(direct) {
             return pdt2.price - pdt1.price;
         });
     }
-    renderProduct();
+    renderProduct(products);
 }
 function sortabc(direct) {
     if (direct == "sortabc_asc") {
@@ -119,15 +125,15 @@ function sortabc(direct) {
             return pdt2.name.localeCompare(pdt1.name);
         });
     }
-    renderProduct();
+    renderProduct(products);
 }
-
+// tạo hàm lấy thông tin từ products
 function getProductById(pdtId) {
     return products.find(function (pdt) {
         return pdt.id == pdtId;
     })
 }
-
+// edit chỉnh sửa thông tin product
 function editPharmacy(pdtId) {
 
     products.forEach(function (item) {
@@ -137,13 +143,17 @@ function editPharmacy(pdtId) {
             document.querySelector("#price").value = item.price;
             document.querySelector("#manufactory").value = item.manufactory;
             document.querySelector("#cancel").classList.remove('done');
+            document.querySelector("#save").classList.remove('done');
             return;
         }
     });
+    localStorage.setItem(key_data, JSON.stringify(products));
 }
 
 function cancelPharmacy(pdtId) {
     clearForm()
+    document.querySelector("#save").classList.add('done');
+    document.querySelector("#cancel").classList.add('done');
 }
 function savePharmacy() {
     let newproductName = document.getElementById("productName").value;
@@ -162,19 +172,22 @@ function savePharmacy() {
         }
     }
     document.querySelector("#cancel").classList.add('done');
-    setData(key_data, products);
+    localStorage.setItem(key_data, JSON.stringify(products));
+    document.querySelector("#save").classList.add('done');
+    document.querySelector("#cancel").classList.add('done');
     clearForm();
-    renderProduct();
+    renderProduct(products);
 }
-// function search() {
-//     let keywork = document.querySelector('.search').value;
-//     let result = products.filter(function (product) {
-//         return product.name.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
-//     })
-//     renderProducts(result);
-// }
+// tìm kiếm name product
+function search() {
+    let keywork = document.querySelector('#searchicon').value;
+    let result = products.filter(function (product) {
+        return product.name.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
+    });
+    renderProduct(result);
+}
 function main() {
     init();
-    renderProduct();
+    renderProduct(products);
 }
 main();
