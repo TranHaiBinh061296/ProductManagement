@@ -28,6 +28,7 @@ function init() {
         products = JSON.parse(localStorage.getItem(key_data));
     }
 }
+// render product
 function renderProduct(data) {
     let htmls = data.map(function (product, index) {
         return `
