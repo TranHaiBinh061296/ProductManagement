@@ -57,7 +57,7 @@ function formatCurrency(number) {
 function addPharmacy() {
     // b1: lấy value từ các field
     // b2: tạo ra 1 đối tượng Product
-    // b3: thêm vào students
+    // b3: thêm vào product
     // b4: renderproduct()
     // b5: clear form
     let productName = document.querySelector("#productName").value;
