@@ -104,6 +104,19 @@ function removePharmacy(id) {
         renderProduct(products);
     }
 }
+function sortstt(direct) {
+    if (direct == "sortid_asc" || direct == "sortid_decs") {
+        products.sort(function (pdt1, pdt2) {
+            return pdt1.id - pdt2.id;
+        });
+    } else {
+        //products.reverse();
+        products.sort(function (pdt1, pdt2) {
+            return pdt2.id - pdt1.id;
+        });
+    }
+    renderProduct(products);
+}
 function sort(direct) {
     if (direct == "sort_asc") {
         products.sort(function (pdt1, pdt2) {
