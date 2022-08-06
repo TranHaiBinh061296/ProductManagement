@@ -6,10 +6,29 @@
     border-collapse: collapse;
 
 }
+body {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210115/pngtree-abstract-hexagon-gray-gradient-white-minimalist-medical-technology-background-image_524812.jpg")
+}
+
+.tbpharmacy {
+    background-image: url("https://pkmacbook.com/wp-content/uploads/2021/06/background-chu-de-y-te_034616427.jpg")
+
+}
+.create-product {
+    background-image: url("https://images.foody.vn/res/g13/122076/prof/s576x330/foody-mobile-ch6-jpg-364-635630468295337052.jpg");
+}
+.move {
+    padding: 0px;
+    margin: 0px;
+}
 
 body {
     width: 1350px;
     margin: auto;
+}
+.tbpharmacy {
+    background-image: url("https://pkmacbook.com/wp-content/uploads/2021/06/background-chu-de-y-te_034616427.jpg");
+    
 }
 
 .row {
