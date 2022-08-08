@@ -62,12 +62,12 @@ function addPharmacy() {
     // b4: renderproduct()
     // b5: clear form
     let productName = document.querySelector("#productName").value;
-    if (productName == null || productName == "") {
-        alert("Product Name is required");
+    let price = Number(document.querySelector("#price").value);
+    if (productName == null || productName == "" || price == "" || price == null) {
+        alert("Product Name and price is required");
         return;
     }
     let image = document.querySelector("#image").value;
-    let price = Number(document.querySelector("#price").value);
     let manufactory = document.querySelector("#manufactory").value;
     let id = getLastestId() + 1;
     let newProduct = new Product(id, productName, image, price, manufactory);
